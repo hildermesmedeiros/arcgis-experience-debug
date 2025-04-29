@@ -38,37 +38,36 @@
 		},
 		"problemMatcher": []
 	  },
-      {
-        "label": "Start Server with Debug",
-        "type": "shell",
-        "command": "npm run debug",
-        "options": {
-          "cwd": "${workspaceFolder}/server"
-        },
-        "group": "build",
-        "problemMatcher": []
-      },
-      {
-        "label": "Start Client with Debug",
-        "type": "shell",
-        "command": "npm start",
-        "options": {
-          "cwd": "${workspaceFolder}/client",
-          "env": {
-            "DEBUG": "true"
-          }
-        },
-        "group": "build",
-        "problemMatcher": []
-      },
-      {
-        "label": "Start Debug ExperienceBuilder",
-        "dependsOn": ["Start Client with Debug", "Start Server with Debug"],
-        "type": "shell",
-        "command": "echo 'Starting ExperienceBuilder in debug mode...'",
-        "group": "build",
-        "problemMatcher": []
-      }
+	  {
+		"label": "Start Server with Debug",
+		"type": "shell",
+		"command": "npm run debug",
+		"options": {
+		  "cwd": "${workspaceFolder}/server"
+		},
+		"group": "build",
+		"problemMatcher": []
+	  },
+	  {
+		"label": "Start Client with Debug",
+		"type": "shell",
+		"command": "npm start",
+		"options": {
+		  "cwd": "${workspaceFolder}/client",
+		  "env": {
+			"DEBUG": "true"
+		  }
+		},
+		"group": "build",
+		"problemMatcher": []
+	  },
+	  {
+		"label": "Start Debug ExperienceBuilder",
+		"dependsOn": ["Start Client with Debug", "Start Server with Debug"],
+		"type": "shell",
+		"command": "echo 'Starting ExperienceBuilder in debug mode...'",
+		"group": "build",
+		"problemMatcher": []
+	  }
 	]
-}
-  
+  }
