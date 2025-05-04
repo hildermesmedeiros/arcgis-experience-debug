@@ -1,6 +1,27 @@
 # arcgis-experience-debug
 Project with configs for debug in vscode
 
+## Debugging in VSCode
+
+### Debug Configuration
+
+To facilitate the debugging process, the project includes specific configurations for VSCode that allow you to easily start and debug both the server and client.
+
+### Starting Debugging
+
+1. **Start server and client in debug mode**:
+   - Press `Ctrl+Shift+P` to open the command palette
+   - Type and select `Tasks: Run Task`
+   - Select `start experience in debug`
+   - This will start both the server and client in debug mode
+
+2. **Select browser for debugging**:
+   - After starting the server and client, press `Ctrl+Shift+D` to open the debug panel
+   - In the debug configuration selector, choose the browser you want to use for debugging
+   - Click the start debugging button (green play icon)
+   - The selected browser will automatically open connected to the debugger
+
+
 # Package.json Configuration Guide
 
 This guide explains the package.json configurations for both the client and server components of Experience Builder.
