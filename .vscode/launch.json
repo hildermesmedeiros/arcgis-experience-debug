@@ -1,13 +1,55 @@
 {
   "version": "0.2.0",
   "configurations": [
+    
     {
       "type": "chrome",
       "request": "launch",
-      "name": "Debug Client",
+      "name": "Debug Client-Open-chrome",
       "url": "https://localhost:3001",
       "webRoot": "${workspaceFolder}/client",
       "sourceMaps": true,
+      "preLaunchTask": "Start Client with Debug"
+    },
+    {
+      "type": "msedge",
+      "request": "launch",
+      "name": "Debug Client-Open-edge",
+      "url": "https://localhost:3001",
+      "webRoot": "${workspaceFolder}/client",
+      "sourceMaps": true,
+      "preLaunchTask": "Start Client with Debug"
+    },
+    {
+      "type": "firefox",
+      "request": "launch",
+      "name": "Debug Client-Open-firefox",
+      "url": "https://localhost:3001",
+      "webRoot": "${workspaceFolder}/client",
+      "suggestPathMappingWizard": true,
+      "reAttach": true,
+      "pathMappings": [
+        {
+          "url": "webpack:///builder",
+          "path": "${workspaceFolder}"
+        },
+        {
+          "url": "webpack://exb-client",
+          "path": "${workspaceFolder}/client"
+        },
+        {
+          "url": "webpack://exb-client/external system *",
+          "path": "${workspaceFolder}/node_modules/*"
+        },
+        {
+          "url": "webpack://exb-client/external%20system%20%22jimu-core%22",
+          "path": "${workspaceFolder}/node_modules/jimu-core"
+        },
+        {
+          "url": "https://localhost:3001",
+          "path": "${workspaceFolder}"
+        }
+      ],
       "preLaunchTask": "Start Client with Debug"
     },
     {
@@ -20,19 +62,11 @@
       "outFiles": ["${workspaceFolder}/server/**/*.js"],
       "preLaunchTask": "Start Server with Debug"
     },
-    {
-      "type": "node",
-      "request": "attach",
-      "name": "Attach to Process",
-      "port": 9229,
-      "restart": true,
-      "skipFiles": ["<node_internals>/**"]
-    }
   ],
   "compounds": [
     {
       "name": "Debug Client and Server",
-      "configurations": ["Debug Server", "Debug Client"],
+      "configurations": ["Debug Server", "Debug Client-Open-chrome"],
       "preLaunchTask": "Start Debug ExperienceBuilder"
     }
   ]
